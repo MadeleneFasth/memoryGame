@@ -3,7 +3,7 @@ Christmas memory game
 
 <hr>
 Vårt projektarbete
-<hr>
+<br>
 Gruppmedlemar: 
 Casandra
 Emelie

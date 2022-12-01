@@ -8,4 +8,4 @@ Emelie<br>
 Madelene<br>
 <br>
 <br>
-Flowcharten är en del av vår planering för att få en uppfattning vilka delar som behövdes
+Flowcharten är en del av vår planering

@@ -1,8 +1,6 @@
 # memoryGame
-<h1>Christmas memory game</h1>
 
-
-<h2><b>Vårt projektarbete</b></h2>
+<h2><b>Vårt projektarbete: Christmas memory game</b></h2>
 <br>
 Gruppmedlemar: 
 Casandra

@@ -8,4 +8,4 @@ Emelie<br>
 Madelene<br>
 <br>
 <br>
-Flowcharten är en del av vår planering
+Bifogar flowcharten som är en del av vår planering

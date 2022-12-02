@@ -1,33 +1,102 @@
 // Alla kort, 2 st av samma
 let cardsArray = [
-  { imgSrc: "./assets/bauble.png", name: "bauble" },
-  { imgSrc: "./assets/cane.png", name: "cane" },
-  { imgSrc: "./assets/bell.png", name: "bell" },
-  { imgSrc: "./assets/lights.png", name: "lights" },
-  { imgSrc: "./assets/reindeer.png", name: "reindeer" },
-  { imgSrc: "./assets/mistletoe.png", name: "mistletoe" },
-  { imgSrc: "./assets/tree.png", name: "tree" },
-  { imgSrc: "./assets/gingerbread.png", name: "gingerbread" },
-  { imgSrc: "./assets/sock.png", name: "sock" },
-  { imgSrc: "./assets/presents.png", name: "presents" },
-  { imgSrc: "./assets/sleigh.png", name: "sleigh" },
-  { imgSrc: "./assets/wreath.png", name: "wreath" },
-
-  { imgSrc: "./assets/bauble.png", name: "bauble" },
-  { imgSrc: "./assets/cane.png", name: "cane" },
-  { imgSrc: "./assets/bell.png", name: "bell" },
-  { imgSrc: "./assets/lights.png", name: "lights" },
-  { imgSrc: "./assets/reindeer.png", name: "reindeer" },
-  { imgSrc: "./assets/mistletoe.png", name: "mistletoe" },
-  { imgSrc: "./assets/tree.png", name: "tree" },
-  { imgSrc: "./assets/gingerbread.png", name: "gingerbread" },
-  { imgSrc: "./assets/sock.png", name: "sock" },
-  { imgSrc: "./assets/presents.png", name: "presents" },
-  { imgSrc: "./assets/sleigh.png", name: "sleigh" },
-  { imgSrc: "./assets/wreath.png", name: "wreath" },
+  { 
+    imgSrc: "./assets/bauble.png", 
+    name: "bauble" 
+  },
+  { 
+    imgSrc: "./assets/cane.png", 
+    name: "cane" 
+  },
+  { 
+    imgSrc: "./assets/bell.png", 
+    name: "bell" 
+  },
+  { 
+    imgSrc: "./assets/lights.png", 
+    name: "lights" 
+  },
+  { 
+    imgSrc: "./assets/reindeer.png", 
+    name: "reindeer" 
+  },
+  { 
+    imgSrc: "./assets/mistletoe.png", 
+    name: "mistletoe" 
+  },
+  { 
+    imgSrc: "./assets/tree.png", 
+    name: "tree" 
+  },
+  { 
+    imgSrc: "./assets/gingerbread.png", 
+    name: "gingerbread" 
+  },
+  { 
+    imgSrc: "./assets/sock.png", 
+    name: "sock" 
+  },
+  { 
+    imgSrc: "./assets/presents.png", 
+    name: "presents" 
+  },
+  { 
+    imgSrc: "./assets/sleigh.png", 
+    name: "sleigh" 
+  },
+  { 
+    imgSrc: "./assets/wreath.png", 
+    name: "wreath" 
+  },
+  { 
+    imgSrc: "./assets/bauble.png", 
+    name: "bauble" 
+  },
+  { 
+    imgSrc: "./assets/cane.png", 
+    name: "cane" 
+  },
+  { imgSrc: "./assets/bell.png", 
+    name: "bell" 
+  },
+  { 
+    imgSrc: "./assets/lights.png", 
+    name: "lights" 
+  },
+  { 
+    imgSrc: "./assets/reindeer.png", 
+    name: "reindeer" 
+  },
+  { 
+    imgSrc: "./assets/mistletoe.png", 
+    name: "mistletoe" 
+  },
+  { 
+    imgSrc: "./assets/tree.png", 
+    name: "tree" 
+  },
+  { 
+    imgSrc: "./assets/gingerbread.png", 
+    name: "gingerbread" 
+  },
+  { 
+    imgSrc: "./assets/sock.png", 
+    name: "sock" 
+  },
+  { 
+    imgSrc: "./assets/presents.png", 
+    name: "presents" 
+  },
+  { 
+    imgSrc: "./assets/sleigh.png", 
+    name: "sleigh" 
+  },
+  { 
+    imgSrc: "./assets/wreath.png", 
+    name: "wreath" 
+  },
 ];
-
-// Blandar korten varje gång
+// Blandar listan av korten varje gång koden körs
 cardsArray.sort(() => Math.random() - 0.5);
 
 // Objektlista för players (användarna)
@@ -42,7 +111,7 @@ let players = [
   },
 ];
 
-// Variabler som vi har skapat
+// Variabler 
 const startScreen = document.querySelector(".start-screen");
 const button = document.querySelector(".start-btn");
 const fieldOne = document.querySelector(".player-one-field");
@@ -51,22 +120,21 @@ let cardContainer = document.querySelector(".card-container");
 let playerTurnHolder = document.querySelector(".player-turn-holder");
 let playerOneScoreHolder = document.querySelector(".player-one-score");
 let playerTwoScoreHolder = document.querySelector(".player-two-score");
-
 let cardsChosen = [];
 let cardsChosenId = [];
 let gameTurn = 0;
 let pairOfCards = cardsArray.length / 2;
 
-// Startknapp på förstasidan
+//eventlistner till knappen, drar igång funktionen startAndHide.
 button.addEventListener("click", startAndHide);
 
-// Användarna skriver in sina namn
+// funktionen hämtar inputen från användarna och lagrar in i objektlistan (players[x].name).
 function nameInputs() {
   players[0].name = fieldOne.value;
   players[1].name = fieldTwo.value;
 }
 
-// Tar bort startrutan och visar spelplanen
+// Gömmer startrutan och visar spelplanen
 function startAndHide() {
   if (startScreen.style.display === "none") {
     startScreen.style.display = "block";
@@ -88,7 +156,7 @@ function distributeCards() {
   }
 }
 
-// Uppdaterar vems tur det är av användarna 
+// Uppdaterar vems tur det är av användarna och uppdaterar poängdisplayen. 
 function updateGame() {
   let currentPlayer = players[gameTurn];
   playerTurnHolder.innerText = currentPlayer.name;
@@ -105,20 +173,21 @@ function startGame() {
   playerTwoScoreHolder.innerText = `${players[1].name}: ${players[1].score}`;
 }
 
-// Funktion som visar vilket kort användaren har tryckt på
+// Funktionen visar cardsArray[x].name när kortet klickats på. Funktionen sparar även ner kortet namn i listan cardsChosen och kortets index i cardsChosenId.
 function showChosenCard() {
-  const cardIndex = this.getAttribute("class");
-  cardsChosen.push(cardsArray[cardIndex].name);
-  cardsChosenId.push(cardIndex);
-  this.setAttribute("src", cardsArray[cardIndex].imgSrc);
+    const cardIndex = this.getAttribute("class");
+    cardsChosen.push(cardsArray[cardIndex].name);
+    cardsChosenId.push(cardIndex);
+    this.setAttribute("src", cardsArray[cardIndex].imgSrc);
   if (cardsChosenId.length === 2) {
     setTimeout(checkForMatch, 300);
   }
 }
 
 /*  
-Funktion som kollar så att man inte får en matchning om man trycker på enbart ett och samma kort
-men man får en matchning om man får upp två olika kort med samma bild och poängen uppdateras med +1
+Funktion kontrollerar om de två vända korten matchar. Dels kollar den om korten i listan CardsChosen är lika, har samma namn. 
+Sedan kollar den också om korten har olika index för att säkerställa att man inte råkat klicka på samma kort två gånger. 
+Är det en matchning uppdateras spelarens poäng med +1 och spelaren får fortsätta spela i nästa runda. 
 */
 function checkForMatch() {
   let imgs = document.querySelectorAll("img");
@@ -143,10 +212,10 @@ function checkForMatch() {
 
   cardsChosen = []; // Nollar listan
   cardsChosenId = []; // Nollar listan
-  updateGame(); // Kör funktionen som visar vems tur det är
+  updateGame(); // Kör funktionen som visar vems tur det är och uppdaterar presentationen av spelarnas poäng.
 }
 
-// Funktionen räknar ihop poängen och skriver ut vem som har vunnit eller om det har blivit oavgjort
+// Funktionen kollar om poängen i spelet är lika mycket som pairOfCards i spelet. Om det är sant avslutas spelet och genom en alert skriver det ut vem som har vunnit omgången eller om det har blivit oavgjort.
 function checkWon() {
   let score1 = players[0].score;
   let score2 = players[1].score;
